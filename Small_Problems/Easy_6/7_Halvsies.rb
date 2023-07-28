@@ -49,3 +49,22 @@ puts halvsies([1, 2, 3, 4]) == [[1, 2], [3, 4]]
 puts halvsies([1, 5, 2, 4, 3]) == [[1, 5, 2], [4, 3]]
 puts halvsies([5]) == [[5], []]
 puts halvsies([]) == [[], []]
+
+# Algorithm:
+# - determine the middle of the array by dividing array.size by 2.0; call .ceil on that so that odd-number arrays will have the middle element included 
+# - initialize the first half array by using .slice(0, middle) which starts at 0 and includes middle number of elements
+# - initialize the second half array by using .slice(middle, array.size - middle) which starts at middle index (not middle element) and includes array.size - middle number of elements
+# - return the two arrays in a nested array
+
+def halvsiesLS(array)
+  middle = (array.size / 2.0).ceil
+  first_half = array.slice(0, middle)
+  second_half = array.slice(middle, array.size - middle)
+  [first_half, second_half]
+end
+
+puts "---------------------"
+puts halvsiesLS([1, 2, 3, 4]) == [[1, 2], [3, 4]]
+puts halvsiesLS([1, 5, 2, 4, 3]) == [[1, 5, 2], [4, 3]]
+puts halvsiesLS([5]) == [[5], []]
+puts halvsiesLS([]) == [[], []]

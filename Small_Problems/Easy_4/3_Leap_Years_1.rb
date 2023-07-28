@@ -35,15 +35,25 @@
   # 
 
 # Algorithm:
-# - check if year is divisible by 4 -> year % 4 == 0
-  # - if not, return false
-  # - if yes, also check if year is divisible by 100 -> year % 100 == 0
-    # - if yes, 
-    # - also check if year is divisible by 400 -> year % 400 == 0
+# - rule out the items at the bottom of the funnel first. Catch the widest part of the funnel with the else statement. The least likely criteria will be tested for first.
+# - check if a year is evenly divisible by 400. If so, it's a leap year.
+# - check if a year is evenly divisible by 100. If so, it's not a leap year.
+# - check if a year is evenly divisible by 4. If so, it's a leap year.
 
 def leap_year?(year)
-  if year % 4 == 0
-    if year % 100 == 0
-      if 
 
 end
+
+puts leap_year?(2016) == true
+puts leap_year?(2015) == false
+puts leap_year?(2100) == false
+puts leap_year?(2400) == true
+puts leap_year?(240000) == true
+puts leap_year?(240001) == false
+puts leap_year?(2000) == true
+puts leap_year?(1900) == false
+puts leap_year?(1752) == true
+puts leap_year?(1700) == false
+puts leap_year?(1) == false
+puts leap_year?(100) == false
+puts leap_year?(400) == true

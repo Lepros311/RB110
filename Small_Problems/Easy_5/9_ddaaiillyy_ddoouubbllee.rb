@@ -34,13 +34,11 @@
 # - compare the character to every other element in the array
 
 def crunch(text)
-  index = 0
-  crunch_text = ''
-  while index <= text.length - 1
-    crunch_text << text[index] unless text[index] == text[index + 1]
-    index += 1
+  new_text = ''
+  text.chars.each_with_index do |char, index| 
+    new_text << char if char != text[index+1]
   end
-  crunch_text
+  new_text
 end
 
 puts crunch('ddaaiillyy ddoouubbllee') == 'daily double'

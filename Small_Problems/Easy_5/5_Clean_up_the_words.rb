@@ -25,8 +25,7 @@
 # - 
 
 def cleanup(str)
-  str.gsub!(/[^a-z]/,' ')
+  str.gsub!(/[^a-z]/,' ').squeeze(" ")
 end
 
-puts cleanup("---what's my +*& line?")
 puts cleanup("---what's my +*& line?") == ' what s my line '

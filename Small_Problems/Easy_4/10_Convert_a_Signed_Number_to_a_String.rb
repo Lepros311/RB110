@@ -51,6 +51,7 @@ def signed_integer_to_string(number)
   else
     stringed_number
   end
+  # also could have done: case stringed_number <=> 0 
 end
 
 puts signed_integer_to_string(4321) == '+4321'

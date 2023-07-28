@@ -24,8 +24,22 @@
   # 
 
 # Algorithm:
-# - reverse the previous method
-# - change the values to strings and the keys to integers
-# - rename the method param, digits array, etc.
-# - 
+# - start by initializing a constant array to hold the string values of each digit
+# - initialize a result variable to an empty string
+# - being a loop
+# - divide the number by 10
+  # - save the quotient integer to number var; save the quotient remainder to a new var; save them both at the same time using .divmod
+# - reference the string digit by using the remainder value and prepend it to the result string
+# - For example: 236: 236 / 10 = 23 r6 '6', then 23 / 10 = 2 r3 '36', then 2 / 10 = 0 r2 '236'
+# - break when number equals 0
+# - return the result string
 
+
+
+def integer_to_string(number)
+
+end
+
+puts integer_to_string(4321) == '4321'
+puts integer_to_string(0) == '0'
+puts integer_to_string(5000) == '5000'

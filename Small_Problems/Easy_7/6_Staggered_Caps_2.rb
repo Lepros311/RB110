@@ -24,30 +24,18 @@
   # 
 
 # Algorithm:
-# - I need to find a way to skip to spaces
-# - Count everything except the spaces 
-# - create a count variable
-# - only increase the count variable if a character is something other than space
-# - first index is .upcase
-# - use Next if str[index] == ' '
-# - use a flag that switches true/false w/ each iteration
+# - initialize an empty result string
+# - set a need_upper flag to true
+# - string.chars.each to create an array of the characters in the string and iterate
+  # - if char is a letter, check if need_upper is true or false
+    # - if it's true, result += char.upcase; if it's false, result += char.downcase
+    # - flip the need_upper flag to false so that it executes the other branch next
+  # - if char is not a letter, result += char (something other than a letter)
+# - return the result
 
-def staggered_case(str)
-  staggered_str = ''
-  need_upper = true
-  str.chars.each do |char|
-    if char =~ /[a-z]/i
-      if need_upper
-        staggered_str += char.upcase
-      else
-        staggered_str += char.downcase
-      end
-      need_upper = !need_upper
-    else
-      staggered_str += char
-    end
-  end
-   staggered_str
+
+def staggered_case(string)
+
 end
 
 puts staggered_case('I Love Launch School!') == 'I lOvE lAuNcH sChOoL!'

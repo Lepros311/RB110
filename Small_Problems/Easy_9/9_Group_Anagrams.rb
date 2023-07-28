@@ -25,9 +25,14 @@
   # 5 output arrays / sets of anagrams 
 
 # Algorithm:
-# - compare each el to other els, checking whether they have the same chars
-# - if it finds a match, create a new array and add both els to it
-# - turn each word into chars array, then use .all? 
+# - create an empty hash
+# - words.each do |word|
+  # - on each iteration, split, sort, and join the word, and save to key variable
+  # - if the key exists in the hash, push the word into the value for that key (which is an array)
+  # - if the key does not exist in the hash, add it with a value of [word] to create a new array as a value to the new key and the word being its first element
+# - iterate over the hash values with .each_value
+  # - print a separator "-------""
+  # - print just the arrays: p v
 
 words =  ['demo', 'none', 'tied', 'evil', 'dome', 'mode', 'live',
           'fowl', 'veil', 'wolf', 'diet', 'vile', 'edit', 'tide',
