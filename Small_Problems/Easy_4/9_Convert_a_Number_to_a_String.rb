@@ -26,7 +26,7 @@
 # Algorithm:
 # - start by initializing a constant array to hold the string values of each digit
 # - initialize a result variable to an empty string
-# - being a loop
+# - begin a loop
 # - divide the number by 10
   # - save the quotient integer to number var; save the quotient remainder to a new var; save them both at the same time using .divmod
 # - reference the string digit by using the remainder value and prepend it to the result string
@@ -34,10 +34,16 @@
 # - break when number equals 0
 # - return the result string
 
-
+DIGITS = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 
 def integer_to_string(number)
-
+  result = ''
+  loop do
+    number, remainder = number.divmod(10)
+    result.prepend(DIGITS[remainder])
+    break if number == 0
+  end
+  result
 end
 
 puts integer_to_string(4321) == '4321'

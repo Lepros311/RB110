@@ -41,7 +41,13 @@
 # - check if a year is evenly divisible by 4. If so, it's a leap year.
 
 def leap_year?(year)
-
+  if year % 400 == 0
+    true
+  elsif year % 100 == 0
+    false
+  else
+    year % 4 == 0
+  end
 end
 
 puts leap_year?(2016) == true

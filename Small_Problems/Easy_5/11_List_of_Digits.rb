@@ -26,7 +26,8 @@
 
 # Algorithm:
 # - use #to_s to convert the integer to a string
-# - use #split to convert the string to an array
+# - use #chars to convert the string to an array
+# - transform that array into an array of integers of the same numeric value
 
 def digit_list(int)
   int.to_s.chars.map { |digit| digit.to_i }
