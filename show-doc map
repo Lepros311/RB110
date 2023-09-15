@@ -1,0 +1,25 @@
+[1m[1;34mEnumerable#methods[0m[0m: 
+  chain           each_cons         entries     grep      max_by     reduce        tally
+  chunk           each_entry        filter_map  grep_v    member?    slice_after 
+  chunk_while     each_slice        find        group_by  min_by     slice_before
+  collect_concat  each_with_index   find_all    inject    minmax_by  slice_when  
+  detect          each_with_object  flat_map    lazy      partition  sort_by     
+[1m[1;34mArray#methods[0m[0m: 
+  &              clear        drop_while  insert        place                 rindex     sum       
+  *              collect      each        inspect       pop                   rotate     take      
+  +              collect!     each_index  intersection  prepend               rotate!    take_while
+  -              combination  empty?      join          pretty_print          sample     to_a      
+  <<             compact      eql?        keep_if       pretty_print_cycle    select     to_ary    
+  <=>            compact!     fetch       last          product               select!    to_h      
+  ==             concat       fill        length        push                  shelljoin  to_s      
+  []             count        filter      map           rassoc                shift      transpose 
+  []=            cycle        filter!     map!          reject                shuffle    union     
+  all?           deconstruct  find_index  max           reject!               shuffle!   uniq      
+  any?           delete       first       min           repeated_combination  size       uniq!     
+  append         delete_at    flatten     minmax        repeated_permutation  slice      unshift   
+  assoc          delete_if    flatten!    none?         replace               slice!     values_at 
+  at             difference   hash        one?          reverse               sort       zip       
+  bsearch        dig          include?    pack          reverse!              sort!      |         
+  bsearch_index  drop         index       permutation   reverse_each          sort_by! 
+[1m[1;34mself.methods[0m[0m: __pry__
+[1m[1;34mlocals[0m[0m: _  __  _dir_  _ex_  _file_  _in_  _out_  pry_instance
