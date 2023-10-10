@@ -27,13 +27,8 @@
 # Algorithm:
 # 
 
-def rotate_array(arr)
-  new_arr = []
-  arr.each_with_index do |el, i|
-    next if i == 0
-    new_arr << el
-  end
-  new_arr << arr[0]
+def rotate_array(array)
+  new_array = array[1..-1] << array[0]
 end
 
 puts rotate_array([7, 3, 5, 2, 9, 1]) == [3, 5, 2, 9, 1, 7]

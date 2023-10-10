@@ -24,24 +24,19 @@
   # if the argument is 1 then the number stays the same
 
 # Algorithm:
-# if the argument is 1, do nothing
-# if the argument is 2, make it negative and move -2 index to last
-# make a subarray of the n - last and run rotate_array on the subarray
-# append the subarray to the rest of the array
-
-# def rotate_rightmost_digits(num, n)
-#   array_of_num = num.to_s.split('').map { |digit| digit.to_i }
-#   new_array_of_num = rotate_array(array_of_num)
-# end
+# change the integer into an array of chars (so it can be passed to rotate_array)
+# call rotate_array on just the last n digits of the new array
+# save that returned rotated portion back to the same last n digits of the new array
+# turn the array back into a single number and turn that back into an integer
 
 def rotate_array(array)
-  array[1..-1] + [array[0]]
+  new_array = array[1..-1] << array[0]
 end
 
 def rotate_rightmost_digits(num, n)
-  array_of_num = num.to_s.split('').map { |digit| digit.to_i }
-  array_of_num[-n..-1] = rotate_array(array_of_num[-n..-1])
-  array_of_num.join.to_i 
+  num_as_array = num.to_s.chars.map { |digit| digit.to_i }
+  num_as_array[-n..-1] = rotate_array(num_as_array[-n..-1])
+  num_as_array.join.to_i
 end
 
 puts rotate_rightmost_digits(735291, 1) == 735291

@@ -18,25 +18,20 @@
   # 
 
 # Algorithm:
-# print stars
-# each row will have n characters
-# the first row will have 1 star
-# the middle row will have n stars
-# the last row will have 1 star 
-# n-(n-1)
-# n-(n-3)
-# n-(n-5)
-# n-(n-7)
-# n-(n-9)
-# n-(n-7)
-# n-(n-5)
-# n-(n-3)
-# n-(n-1)
+# def print_row(grid_size, distance_from_center)
+# get the number of stars using grid size - (2 * distance from center)
+# multiply '*' by the number of stars and save 
+# output stars centered within the grid size
+#
+# def diamond(grid_size)
+# find the maximum distance away from the center for the rows on the top and bottom using (grid size - 1) / 2
+# loop from max distance down to 0; each iteration, use the distance to print the row()
+# loop from 1 up to max distance; each iteration, use the distance to print the row()
 
 def print_row(grid_size, distance_from_center)
-  number_of_stars = grid_size - 2 * distance_from_center
+  number_of_stars = grid_size - (2 * distance_from_center)
   stars = '*' * number_of_stars
-  puts stars.center(grid_size)  
+  puts stars.center(grid_size)
 end
 
 def diamond(grid_size)

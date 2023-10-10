@@ -17,18 +17,37 @@
   # 
 
 # Algorithm:
-# create an array with the range of 1..n
-# use on/off flag
-# do a loop n times
+# initialize_lights(number of lights)
+# 	create a new hash and save as lights variable
+# 	loop up to the number of lights provided
+# 		every iteration, number will be the key for lights and the value will be 'off'
+# 	return the lights hash 
+# end 
+	
+	
+# toggle_every_nth_light!(lights, nth)
+# 	iterate through the lights
+# 		if the position is divisible by the nth number provided, 
+# 			for the light in that position/key of the hash, change its state (if it's   off, turn it on; if it's not off, turn it off)
+# end 
+
+
+# on_lights(lights)
+# 	select the lights that are in an 'on' state and return an array of those keys 
+# end 
+
+
+# toggle_lights(number of lights)
+# 	initialize the number of lights provided and save to lights variable
+# 	loop up to the size/number of lights 
+# 		on every iteration number, toggle the lights that are divisible by that number()
+# 	return an array of the lights that are on 
+# end
 
 def initialize_lights(number_of_lights)
   lights = Hash.new
   1.upto(number_of_lights) { |number| lights[number] = 'off' }
-  lights 
-end
-
-def on_lights(lights)
-  lights.select { |_position, state| state == 'on' }.keys
+  lights
 end
 
 def toggle_every_nth_light!(lights, nth)
@@ -39,11 +58,13 @@ def toggle_every_nth_light!(lights, nth)
   end
 end
 
+def on_lights(lights)
+  lights.select { |_position, state| state == 'on' }.keys
+end
+
 def toggle_lights(number_of_lights)
   lights = initialize_lights(number_of_lights)
-  1.upto(lights.size) do |iteration_number|
-    toggle_every_nth_light!(lights, iteration_number)
-  end
+  1.upto(lights.size) { |i| toggle_every_nth_light!(lights, i) }
   on_lights(lights)
 end
 
