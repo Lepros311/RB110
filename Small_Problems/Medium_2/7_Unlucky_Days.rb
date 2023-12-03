@@ -24,11 +24,10 @@
 # Look at the friday? method
 
 # Algorithm:
-# use the year given
-# loop through each day of the year
-  # check each day friday?
-  # if true, check if the date is the 13th and count 1 if true
-# return the number of the count
+# create empty array to hold friday13 booleans true
+# initialize dates with first of year and range to last of year
+# call each on range above; iterate and shovel true into array if .friday? && .mday == 13
+# return array.count
 require 'date'
 
 def friday_13th(year)
