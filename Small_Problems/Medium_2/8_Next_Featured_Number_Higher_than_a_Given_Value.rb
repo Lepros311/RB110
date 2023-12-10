@@ -27,7 +27,23 @@
   # 
 
 # Algorithm:
-# 
+# num % 2 == 1
+# num % 7 == 0
+# num.digits.count == num.digits.uniq.count
+# num + 1 loop until all conditions above are true
+
+def featured(num)
+  num += 1
+  loop do
+    if num % 2 == 1 && num % 7 == 0 && num.digits.count == num.digits.uniq.count
+      return num
+    else
+      break if num >= 9876543210
+      num += 1
+    end
+  end
+  puts "There is no possible number that fulfills those requirements."
+end
 
 puts featured(12) == 21
 puts featured(20) == 21
