@@ -9,10 +9,10 @@
 # sum_square_difference(100) == 25164150
 
 # input:
-# 
+# integer
 
 # output:
-# 
+# integer
 
 # rules:
   # 
@@ -21,7 +21,27 @@
   # 
 
 # Algorithm:
-# 
+# sum all the digits up to and including the given integer
+# square the sum and save to variable
+# create an array of all the digits up to and including the given integer
+# square all the elements in that array
+# use .reduce to sum all the elements in that array and save to variable
+# subtract one variable from the other and return the difference
+
+def sum_square_difference(int)
+  sum_first_array = []
+  1.upto(int) do |digit|
+    sum_first_array << digit
+  end
+  sum_first_total = sum_first_array.reduce(:+)
+  sum_first_total_squared = sum_first_total ** 2
+  square_first_array = []
+  1.upto(int) do |digit|
+    square_first_array << (digit ** 2)
+  end
+  square_first_total = square_first_array.reduce(:+)
+  sum_first_total_squared - square_first_total
+end
 
 puts sum_square_difference(3) == 22
    # -> (1 + 2 + 3)**2 - (1**2 + 2**2 + 3**2)
