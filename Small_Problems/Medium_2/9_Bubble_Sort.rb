@@ -37,9 +37,24 @@
   # 
 
 # Algorithm:
-# 
+# iterate through array using .map
+# array.map { |el| el > el}
+# How do I swap two elements?
+# array[i] > array[i+1] ? array[i..-i] : array
 
-
+def bubble_sort!(array)
+  loop do
+    index = 0
+    loop do
+      if array[index] > array[index + 1]
+        array[index], array[index + 1] = array[index + 1], array[index]
+      end
+      index += 1
+      break if index > array.count - 2
+    end
+    break if array == array.sort
+  end
+end
 
 array = [5, 3]
 bubble_sort!(array)
